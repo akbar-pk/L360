@@ -33,7 +33,7 @@ var homePage = (function(){
         console.log(ev); 
         //return false;
         // Check if the current browser supports the Web Share API
-        if (navigator.share !== undefined) {
+        if (navigator.share) {
 
             //Get info of clicked store
             var thisShareBtn = $(this);
@@ -44,6 +44,7 @@ var homePage = (function(){
             console.log(shareInfo);
             // Get the canonical URL from the link tag
             //var shareUrl = document.querySelector('link[rel=canonical]') ? document.querySelector('link[rel=canonical]').href : window.location.href;
+            
 
             // Share it!
             navigator.share({
@@ -68,12 +69,9 @@ var homePage = (function(){
 
 })();
 
-const shareBtn = document.querySelector('.share-store');
-const ogBtnContent = shareBtn.textContent;
-const title = "Test Title";//document.querySelector('h1').textContent;
-const url = document.querySelector('link[rel=canonical]') &&
-            document.querySelector('link[rel=canonical]').href ||
-            window.location.href;
+let shareBtn = $('.share-store');
+let title = shareBtn.closest('action-btn').find('.website-link').attr('href');
+let url = shareBtn.closest('action-btn').find('.call-link').attr('href');
 
 shareBtn.addEventListener('click', () => {
   if (navigator.share) {
