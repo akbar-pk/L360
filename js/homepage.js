@@ -1,5 +1,6 @@
 var homePage = (function(){
 
+    /************* SEARCH OPTION (STORE / SERVICE) *************/
     // Cache DOM
     const $locatorOptDropdown = $('#locatorOptDropdown');
     var $locatorOptBtn = $locatorOptDropdown.find('#locatorOptBtn');
@@ -16,8 +17,52 @@ var homePage = (function(){
         //console.log($("#selectedBtn").text());
     }
 
+    /************* SEARCH OPTION (STORE / SERVICE) END *************/
+
+    /************* SHARE API *************/
+
+    // Cache share button
+    var shareButton = $('.share-store');
+    //var supported = document.getElementById('support');
+
+    // Listen for any clicks
+    shareButton.on('click', shareStoreInfo);
+
+    function shareStoreInfo (ev) {
+        console.log(ev); 
+        return false;
+        // Check if the current browser supports the Web Share API
+        if (navigator.share !== undefined) {
+
+            //Get info of clicked store
+            var thisShareBtn = $(this);
+            var shareInfo = {
+                website: thisShareBtn.closest('action-btn').find('.website-link').attr('href'),
+                call: thisShareBtn.closest('action-btn').find('.call-link').attr('href'),
+            };
+            console.log(shareInfo);
+            // Get the canonical URL from the link tag
+            //var shareUrl = document.querySelector('link[rel=canonical]') ? document.querySelector('link[rel=canonical]').href : window.location.href;
+
+            // Share it!
+            navigator.share({
+            title: shareInfo.call,
+            url: shareInfo.website
+            }).then(() => console.log('Successful share'))
+            .catch((error) => console.log('Error sharing:', error));
+
+            ev.preventDefault();
+        } else {
+            //supported.innerHTML = "Unfortunately, this feature is not supported on your browser";
+            console.log("Unfortunately, this feature is not supported on your browser");
+        }
+    }
+
+    /************* SHARE API END *************/
+
     return {
-        changeLocator: changeLocator
+        changeLocator: changeLocator,
+        shareStoreInfo: shareStoreInfo
     }
 
 })();
