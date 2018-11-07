@@ -154,7 +154,7 @@ header {
     list-style-type: none;
 }
 #search_result_wrapper li button {
-    padding: .8em;
+    padding: .7em .8em;
 }
 #search_result_wrapper li h2 {
     font-size: 1rem;
