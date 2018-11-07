@@ -30,7 +30,7 @@ var homePage = (function(){
 
     function shareStoreInfo (ev) {
         console.log(ev); 
-        return false;
+        //return false;
         // Check if the current browser supports the Web Share API
         if (navigator.share !== undefined) {
 
@@ -38,7 +38,7 @@ var homePage = (function(){
             var thisShareBtn = $(this);
             var shareInfo = {
                 website: thisShareBtn.closest('action-btn').find('.website-link').attr('href'),
-                call: thisShareBtn.closest('action-btn').find('.call-link').attr('href'),
+                call: thisShareBtn.closest('action-btn').find('.call-link').attr('href')
             };
             console.log(shareInfo);
             // Get the canonical URL from the link tag
