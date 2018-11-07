@@ -72,9 +72,12 @@ var homePage = (function(){
 let shareBtn = $('.share-store');
 let title = "Buy A Lenovo";
 let url = "https://www.buyalenovo.com";
-let text = "Planning to buy a laptop? Check this out \n Call to Lenovo store: 9538908168 \n or visit";
+//let text = "Planning to buy a laptop? Check this out \n Call to Lenovo store: 9538908168 \n or visit";
+var text = "Address: c store, #39, 80 Feet Rd, Indiranagar, Bengaluru. \n Call: 9538908168 \n Locate on map https://www.google.com/maps/search/?api=1&query=12.9760992,77.6427818&query_place_id=";
+
 
 shareBtn.on('click', () => {
+    //let text = $(this).parents('.item-wrapper').find('address').text();
   if (navigator.share) {
     navigator.share({
         title,
