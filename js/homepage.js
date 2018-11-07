@@ -72,20 +72,22 @@ var homePage = (function(){
 let shareBtn = $('.share-store');
 let title = "Buy A Lenovo";
 let url = "https://www.buyalenovo.com";
+let text = "Call: 9538908168";
 
 shareBtn.on('click', () => {
   if (navigator.share) {
     navigator.share({
-      title,
-      url
+        title,
+        url,
+        text,
     }).then(() => {
-      showMessage(shareBtn, 'Thanks! 😄');
+        showMessage(shareBtn, 'Thanks! 😄');
     })
     .catch(err => {
-      showMessage(shareBtn, `Couldn't share 🙁`);
+        showMessage(shareBtn, `Couldn't share 🙁`);
     });
   } else {
-    showMessage(shareBtn, 'Not supported 🙅‍');
+        showMessage(shareBtn, 'Not supported 🙅‍');
   }
 });
 
