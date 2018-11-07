@@ -154,9 +154,6 @@ header {
     margin: 0;
     list-style-type: none;
 }
-#search_result_wrapper li button {
-    padding: .6em;
-}
 #search_result_wrapper li h2 {
     font-size: 1rem;
     font-weight: bold;
@@ -211,7 +208,7 @@ header {
     text-transform: uppercase;
 }
 #search_result_wrapper #search_list li > .row {
-    padding: .3em 0;
+    padding: .6em;
     position: relative;
 }
 #search_result_wrapper #search_list li > .row > .col {
