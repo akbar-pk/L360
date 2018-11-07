@@ -118,7 +118,6 @@ header {
     height: 500px;
     padding: 0;
     overflow-y: auto;
-    background-color: #efefef;
 }
 #search_result_wrapper li {
     border-bottom: 1px solid #ccc;
