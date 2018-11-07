@@ -29,6 +29,7 @@ var homePage = (function(){
     shareButton.on('click', shareStoreInfo);
 
     function shareStoreInfo (ev) {
+        alert("Share Test");
         console.log(ev); 
         //return false;
         // Check if the current browser supports the Web Share API
@@ -46,8 +47,8 @@ var homePage = (function(){
 
             // Share it!
             navigator.share({
-            title: shareInfo.call,
-            url: shareInfo.website
+                title: shareInfo.call,
+                url: shareInfo.website
             }).then(() => console.log('Successful share'))
             .catch((error) => console.log('Error sharing:', error));
 
