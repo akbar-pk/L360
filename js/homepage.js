@@ -70,8 +70,8 @@ var homePage = (function(){
 })();
 
 let shareBtn = $('.share-store');
-let title = "9538908168";
-let url = "https://www.lenovo.com";
+let title = "Buy A Lenovo";
+let url = "https://www.buyalenovo.com";
 
 shareBtn.on('click', () => {
   if (navigator.share) {
