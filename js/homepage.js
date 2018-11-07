@@ -73,7 +73,7 @@ let shareBtn = $('.share-store');
 let title = shareBtn.closest('action-btn').find('.website-link').attr('href');
 let url = shareBtn.closest('action-btn').find('.call-link').attr('href');
 
-shareBtn.addEventListener('click', () => {
+shareBtn.on('click', () => {
   if (navigator.share) {
     navigator.share({
       title,
