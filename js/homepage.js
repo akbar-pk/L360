@@ -70,7 +70,7 @@ var homePage = (function(){
 
 const shareBtn = document.querySelector('.share-store');
 const ogBtnContent = shareBtn.textContent;
-const title = document.querySelector('h1').textContent;
+const title = "Test Title";//document.querySelector('h1').textContent;
 const url = document.querySelector('link[rel=canonical]') &&
             document.querySelector('link[rel=canonical]').href ||
             window.location.href;
@@ -92,8 +92,9 @@ shareBtn.addEventListener('click', () => {
 });
 
 function showMessage(element, msg) {
-  element.textContent = msg;
+    console.log('Done');
+  /* element.textContent = msg;
   setTimeout(() => {
     element.textContent = ogBtnContent;
-  }, 2000);
+  }, 2000); */
 }
