@@ -67,6 +67,7 @@ header {
     text-transform: uppercase;
     padding: 0em .35em;
     font-size: 0.8rem;
+    margin-left: 1.6em;
 }
 #locatorOptBtn.btn-secondary::after {
     color: #47c3e5;
@@ -154,7 +155,7 @@ header {
     list-style-type: none;
 }
 #search_result_wrapper li button {
-    padding: .7em .8em;
+    padding: .6em;
 }
 #search_result_wrapper li h2 {
     font-size: 1rem;
