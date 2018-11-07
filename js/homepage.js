@@ -72,14 +72,14 @@ var homePage = (function(){
 let shareBtn = $('.share-store');
 let title = "Buy A Lenovo";
 let url = "https://www.buyalenovo.com";
-let text = "Call: 9538908168";
+let text = "Planning to buy a laptop? Check this out \n Call to Lenovo store: 9538908168 \n or visit";
 
 shareBtn.on('click', () => {
   if (navigator.share) {
     navigator.share({
         title,
-        url,
         text,
+        url
     }).then(() => {
         showMessage(shareBtn, 'Thanks! 😄');
     })
