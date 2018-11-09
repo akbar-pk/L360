@@ -57,16 +57,16 @@ var homePage = (function(){
     /************* SHARE API END *************/
 
     /************* MAP VIEW / LIST VIEW SWITCHER *************/
-    if (!changeViewClicked) {
+    
+    setTimeout(function() {
+        $("#change_view").addClass('visible');
+
         setTimeout(function() {
-            $("#change_view").addClass('visible');
+            $("#change_view").addClass('done');
+        }, 5000);
 
-            setTimeout(function() {
-                $("#change_view").addClass('done');
-            }, 5000);
-
-        }, 3000);
-    }
+    }, 3000);
+    
     /** Change view on click on the switcher **/
 
     /* $("#change_view").on('click', changeView);
