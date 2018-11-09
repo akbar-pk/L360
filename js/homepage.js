@@ -57,22 +57,23 @@ var homePage = (function(){
     /************* SHARE API END *************/
 
     /************* MAP VIEW / LIST VIEW SWITCHER *************/
-    setTimeout(function() {
-        $("#change_view").addClass('visible');
-
+    if (!changeViewClicked) {
         setTimeout(function() {
-            $("#change_view").addClass('done');
-        }, 5000);
+            $("#change_view").addClass('visible');
 
-    }, 3000);
+            setTimeout(function() {
+                $("#change_view").addClass('done');
+            }, 5000);
 
+        }, 3000);
+    }
     /** Change view on click on the switcher **/
 
-    $("#change_view").on('click', changeView);
+    /* $("#change_view").on('click', changeView);
 
     function changeView() {
 
-    }
+    } */
 
     /** Change view on click on the switcher END **/
     

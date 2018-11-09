@@ -1,9 +1,11 @@
 var params;
-
+var changeViewClicked = false;
     // dom ready
+
     
     $(document).on('click', '#change_view', function(e){
-
+        changeViewClicked = true;
+        
         e.preventDefault();
         
         if($("#map_canvas:visible").length == 0) {
@@ -55,7 +57,7 @@ var params;
     }
 
     function lazyLoadGoogleMap() {
-        $.getScript("http://maps.google.com/maps/api/js?sensor=true&callback=initializeMap")
+        $.getScript("https://maps.google.com/maps/api/js?sensor=true&callback=initializeMap")
         .done(function (script, textStatus) {            
             //alert("Google map script loaded successfully");
         })
