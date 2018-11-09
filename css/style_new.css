@@ -199,6 +199,7 @@ header {
     border: 0px dotted #ccc;
     border-right: 0;
     z-index: 5;
+    text-decoration: none !important;
 
     -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.47);
     -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.47);
@@ -210,8 +211,9 @@ header {
 border: 0px solid #000000;
     
 }
-#searchResult .change-view:hover, #searchResult .change-view:selected {
-    text-decoration: none;
+#searchResult a.change-view:hover, #searchResult a.change-view:selected {
+    color: #007bff;
+    text-decoration: none !important;
 }
 #searchResult .change-view.visible {
     -webkit-animation-name: animate-change-view-btn; 
