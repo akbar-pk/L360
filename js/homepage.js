@@ -21,83 +21,69 @@ var homePage = (function(){
 
     /************* SHARE API *************/
 
-    // Cache share button
-    var shareButton = $('.share-store');
-    //var supported = document.getElementById('support');
+    let shareBtn = $('.share-store');
+    let title = "Buy A Lenovo";
+    let url = "https://www.buyalenovo.com";
+    //let text = "Planning to buy a laptop? Check this out \n Call to Lenovo store: 9538908168 \n or visit";
+    var text = "Address: c store, #39, 80 Feet Rd, Indiranagar, Bengaluru. \n Call: 9538908168 \n Locate on map: https://www.google.com/maps/search/?api=1&query=12.9760992,77.6427818&query_place_id=";
 
-    // Listen for any clicks
-    //shareButton.on('click', shareStoreInfo);
 
-    function shareStoreInfo (ev) {
-        alert("Share Test");
-        console.log(ev); 
-        //return false;
-        // Check if the current browser supports the Web Share API
-        if (navigator.share) {
+    shareBtn.on('click', () => {
+        //let text = $(this).parents('.item-wrapper').find('address').text();
+    if (navigator.share) {
+        navigator.share({
+            title,
+            text,
+            url
+        }).then(() => {
+            showMessage(shareBtn, 'Thanks! 😄');
+        })
+        .catch(err => {
+            showMessage(shareBtn, `Couldn't share 🙁`);
+        });
+    } else {
+            showMessage(shareBtn, 'Not supported 🙅‍');
+    }
+    });
 
-            //Get info of clicked store
-            var thisShareBtn = $(this);
-            var shareInfo = {
-                website: thisShareBtn.closest('action-btn').find('.website-link').attr('href'),
-                call: thisShareBtn.closest('action-btn').find('.call-link').attr('href')
-            };
-            console.log(shareInfo);
-            // Get the canonical URL from the link tag
-            //var shareUrl = document.querySelector('link[rel=canonical]') ? document.querySelector('link[rel=canonical]').href : window.location.href;
-            
-
-            // Share it!
-            navigator.share({
-                title: shareInfo.call,
-                url: shareInfo.website
-            }).then(() => console.log('Successful share'))
-            .catch((error) => console.log('Error sharing:', error));
-
-            ev.preventDefault();
-        } else {
-            //supported.innerHTML = "Unfortunately, this feature is not supported on your browser";
-            console.log("Unfortunately, this feature is not supported on your browser");
-        }
+    function showMessage(element, msg) {
+        console.log('Done');
+    /* element.textContent = msg;
+    setTimeout(() => {
+        element.textContent = ogBtnContent;
+    }, 2000); */
     }
 
     /************* SHARE API END *************/
 
+    /************* MAP VIEW / LIST VIEW SWITCHER *************/
+    setTimeout(function() {
+        $("#change_view").addClass('visible');
+
+        setTimeout(function() {
+            $("#change_view").addClass('done');
+        }, 5000);
+
+    }, 3000);
+
+    /** Change view on click on the switcher **/
+
+    $("#change_view").on('click', changeView);
+
+    function changeView() {
+
+    }
+
+    /** Change view on click on the switcher END **/
+    
+
+    /************* MAP VIEW / LIST VIEW SWITCHER END *************/
+
+
+
     return {
-        changeLocator: changeLocator,
-        shareStoreInfo: shareStoreInfo
+        changeLocator: changeLocator
     }
 
 })();
 
-let shareBtn = $('.share-store');
-let title = "Buy A Lenovo";
-let url = "https://www.buyalenovo.com";
-//let text = "Planning to buy a laptop? Check this out \n Call to Lenovo store: 9538908168 \n or visit";
-var text = "Address: c store, #39, 80 Feet Rd, Indiranagar, Bengaluru. \n Call: 9538908168 \n Locate on map https://www.google.com/maps/search/?api=1&query=12.9760992,77.6427818&query_place_id=";
-
-
-shareBtn.on('click', () => {
-    //let text = $(this).parents('.item-wrapper').find('address').text();
-  if (navigator.share) {
-    navigator.share({
-        title,
-        text,
-        url
-    }).then(() => {
-        showMessage(shareBtn, 'Thanks! 😄');
-    })
-    .catch(err => {
-        showMessage(shareBtn, `Couldn't share 🙁`);
-    });
-  } else {
-        showMessage(shareBtn, 'Not supported 🙅‍');
-  }
-});
-
-function showMessage(element, msg) {
-    console.log('Done');
-  /* element.textContent = msg;
-  setTimeout(() => {
-    element.textContent = ogBtnContent;
-  }, 2000); */
-}
