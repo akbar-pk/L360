@@ -533,7 +533,7 @@ border: 0px solid #000000;
 @media only screen and (max-width: 371px) {
     /* Search Field */
     .search-main #locator_search_field {
-        font-size: 0.8rem;
+        font-size: 0.68rem;
     }
 
     /* Slider */
