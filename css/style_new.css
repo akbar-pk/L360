@@ -486,15 +486,21 @@ border: 0px solid #000000;
     }
 }
 
+@media only screen and (max-width: 425px) and (max-height: 580px) {
+    #search_result_wrapper {
+        height: 45vh;
+    }
+}
+
 @media only screen and (max-width: 375px) and (max-height: 580px) {
     #search_result_wrapper {
         height: 49vh;
     }
 }
 
-@media only screen and (max-width: 425px) and (max-height: 580px) {
+@media only screen and (max-width: 320px) and (max-height: 580px) {
     #search_result_wrapper {
-        height: 45vh;
+        height: 53vh;
     }
 }
 
