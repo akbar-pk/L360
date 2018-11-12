@@ -155,6 +155,7 @@ header {
 /* Top Navigation */
 #navigation_top.navbar {
     padding: 0;
+    height: 41px;
 }
 #navigation_top .navbar-brand {
     padding: 0;
