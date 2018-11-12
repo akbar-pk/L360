@@ -49,9 +49,7 @@
                         </div>
                     </div>
                 </nav>
-
-                <div class="clearfix"></div>
-                    <div id="search_main" class="search-main">
+                <div id="search_main" class="search-main">
                     <div class="input-group">
                         <div class="input-group-prepend" id="geolocation_btn">
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-crosshairs"></i></span>
@@ -399,5 +397,33 @@
 <!-- Custom JS -->
 <script src="js/homepage.js"></script>
 <script src="js/map.js"></script>
+
+<script>
+    $(function(){
+
+        function setSearchWrapperHeight() {
+
+             var contentHeight = $( window ).height() - $( 'header' ).height() - $( '.bottom-tabs' ).height();
+        
+            if($( '#carouselExampleIndicators:visible' ).length > 0){
+                console.log("coming - carousel YES");
+                contentHeight =  contentHeight - $( '#carouselExampleIndicators' ).height();
+                console.log(contentHeight);
+            } 
+            
+            $('#search_result_wrapper').height(contentHeight);
+            
+        }
+
+        setSearchWrapperHeight();
+
+        $( window ).resize( function(){
+            setSearchWrapperHeight();
+        });
+
+        
+    });
+    
+</script>
 </body>
 </html>
