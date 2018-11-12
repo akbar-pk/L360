@@ -2,19 +2,40 @@ var homePage = (function(){
 
     /************* SEARCH OPTION (STORE / SERVICE) *************/
     // Cache DOM
-    const $locatorOptDropdown = $('#locatorOptDropdown');
-    var $locatorOptBtn = $locatorOptDropdown.find('#locatorOptBtn');
-    var $locatonOptions = $locatorOptDropdown.find('#locatorOptItems a');
+    const $locatorOptSwitch = $('#search_opt_switch');
+    var $storeRadio = $("#storeRadio");
+    var $serviceRadio = $("#serviceRaio");
+    const $locatorSearchField = $('#locator_search_field');
+    const $searchFldClearBtn = $('#searchClearBtn');
 
     //Bind Events
-    $locatonOptions.on('click', changeLocator);
+    $locatorOptSwitch.on('change', changeLocator);
+    $locatorSearchField.on('keyup', searchFieldKeyup);
+    $searchFldClearBtn.on('click', clearSearchField)
 
     function changeLocator (event) {
-        let selectedBtn = event.target.id;
+        if($locatorOptSwitch.prop('checked')) {
+            $storeRadio.prop('checked', true);
+        } else {
+            $serviceRadio.prop('checked', true);
+        }
+        
+    }
 
-        //replace text on the button based on user selection
-        $locatorOptBtn.text($('#'+selectedBtn).text());
-        //console.log($("#selectedBtn").text());
+    function searchFieldKeyup () {
+        var searchKeyLen = $locatorSearchField.val().length;
+        console.log(searchKeyLen);
+        if(searchKeyLen > 0) {
+            $searchFldClearBtn.show();
+        } 
+        else {
+            $searchFldClearBtn.hide();
+        }
+    }
+
+    function clearSearchField () {
+        $locatorSearchField.val('');
+        $searchFldClearBtn.hide();
     }
 
     /************* SEARCH OPTION (STORE / SERVICE) END *************/
@@ -69,18 +90,11 @@ var homePage = (function(){
     
     /** Change view on click on the switcher **/
 
-    /* $("#change_view").on('click', changeView);
-
-    function changeView() {
-
-    } */
-
+    
     /** Change view on click on the switcher END **/
     
 
     /************* MAP VIEW / LIST VIEW SWITCHER END *************/
-
-
 
     return {
         changeLocator: changeLocator
