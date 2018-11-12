@@ -26,11 +26,13 @@
                     
                     
                         <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                            <label class="onoffswitch-label" for="myonoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="search_opt_switch" checked>
+                            <label class="onoffswitch-label" for="search_opt_switch">
                                 <span class="onoffswitch-inner"></span>
                                 <span class="onoffswitch-switch"></span>
                             </label>
+                            <input type="radio" name="searchOpt" id="storeRadio" class="onoffswitch-radio" value="store" checked>
+                            <input type="radio" name="searchOpt" id="serviceRaio" class="onoffswitch-radio" value="service">
                         </div>
                     
 
@@ -55,6 +57,14 @@
                             <span class="input-group-text" id="basic-addon1"><i class="fas fa-crosshairs"></i></span>
                         </div>
                         <input id="locator_search_field" type="text" class="form-control" placeholder="SEARCH BY AREA OR PINCODE OR CITY" aria-label="Username" aria-describedby="basic-addon1">
+                        <span class="input-group-btn clear-field">
+                            <button class="btn btn-link" id="searchClearBtn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </span>
+                        <span class="input-group-btn">
+                            <button class="btn btn-search rounded-right border-left-0" type="button" id="search_btn"><i class="fas fa-search"></i></button>
+                        </span>
                     </div>
                 </div>
 
@@ -325,25 +335,29 @@
                                         <!-- </button> -->
                                     </li>
                     </ul>
-                </div>
+
+                    <div id="intel-family" class="text-center">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col col-12"><img src="img/intel-family-logo.png" alt="" class="intel-logo"></div>
+                                
+                                <div class="marquee copyright-txt" id="copyright_txt">
+                                    <p>&copy; Lenovo 2018. All rights reserved. Lenovo and the Lenovo logo are trademarks of Lenovo in the United States, other countries or both.
+                                        All Images shown are for Illustrative purposes only,and might not resemble the actual product. Ultrabook, Celeron, Celeron Inside, Core Inside, Intel, Intel Logo, Intel Atom, Intel Atom Inside, Intel Core, Intel Inside, Intel Inside Logo, Intel vPro, Itanium, 
+                                        Itanium Inside, Pentium, Pentium Inside, vPro Inside, Xeon, Xeon Phi, and Xeon Inside are trademarks of Intel Corporation or its subsidiaries in the U.S. and/or 
+                                        other countries.</p>
+                                </div>
+                        </div>
+                    </div>
+
+                </div>  
+
+                
+                
             </section>
+
         </main>
-        <!-- <nav class="navbar fixed-bottom navbar-light bg-light bottom-tabs">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Sign Up</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Offers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Offer Redemption</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Business Solution</a>
-                </li>
-            </ul>
-        </nav> -->
+        
         <div id="footer">
             <nav role="navigation">
                 <ul class="nav fixed-bottom bottom-tabs">
