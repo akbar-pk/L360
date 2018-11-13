@@ -14,7 +14,8 @@ window.onload = function(){
         navigator.geolocation.getCurrentPosition(geoSuccess);
     }
     else {
-        console.log('Geolocation is not supported for this Browser/OS.');
+        document.getElementById('no_geo').innerHTML = "Location servie not enabled";
+        //console.log('Geolocation is not supported for this Browser/OS.');
     }
 
 };
