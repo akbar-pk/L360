@@ -29,7 +29,7 @@ window.onload = function(){
                     modalTimeout = setTimeout(function(){
                         $locationInfoModalHtml.modal(locationDialogOpts);
                         $('.modal-backdrop').removeClass("modal-backdrop");
-                        //showHideModal('autoHide');
+                        showHideModal('autoHide');
                     }, 5000);
                 }
                 else if (display == 'hide') {
