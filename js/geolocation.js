@@ -6,6 +6,8 @@ window.onload = function(){
         var startPos;
         var geoSuccess = function(position) {
             startPos = position;
+            document.getElementById('lat').innerHTML = startPos.coords.latitude;
+            document.getElementById('lon').innerHTML = startPos.coords.longitude;
             console.log(startPos.coords.latitude);
             console.log(startPos.coords.longitude);
         };
