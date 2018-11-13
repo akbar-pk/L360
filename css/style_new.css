@@ -213,6 +213,26 @@ header {
     color: #777;
     display: none;
 }
+#locationInfoModal {
+    top: 5em;
+}
+#locationInfoModal .txt {
+    font-size: .8rem;
+}
+#locationInfoModal .modal-content {
+    padding: .1em .5em;
+    background-color: rgba(255,255,255,.8);
+}
+#locationInfoModal button.close {
+    position: absolute;
+    top: -3px;
+    right: 0px;
+    font-size: 1rem;
+}
+#locationInfoModal.modal {
+    position: absolute;
+    bottom: unset;
+}
 /* Slider (Carousel) */
 .home-carousel .carousel-item {
     object-fit: cover;
