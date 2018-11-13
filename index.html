@@ -7,9 +7,6 @@
     <title>Buy A Lenovo</title>
     <link rel="shortcut icon" type="image/x-icon" media="all" href="favicon.ico" />
 
-    <!-- Get user location -->
-    <script src="js/geolocation.js"></script>
-
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -76,11 +73,11 @@
         
         <main id="main-content">
             <section style="position: relative;">
-                <div style="position: absolute; top: 0; left: 0;z-index: 5;margin-top: 30px;">
+                <!-- <div style="position: absolute; top: 0; left: 0;z-index: 5;margin-top: 30px;">
                     Latitude <span id="lat"></span><br />
                     Longitude <span id="lon"></span><br />
                     <span id="no_geo"></span>
-                </div>
+                </div> -->
                 <div id="carouselExampleIndicators" class="carousel slide home-carousel" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -397,6 +394,19 @@
         </div>
     </div>
 
+    <!-- MODALS -->
+    <!-- Location -->
+    <div class="modal fade bd-example-modal-sm" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="locationInfoModal">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <span class="txt d-inline"><i class="fas fa-map-marker-alt d-inline"></i>  &nbsp; Enable location to search near by</span>
+            <button type="button" class="close" aria-label="Close" id="closeLocationInfoModal">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
     <!-- Bootstrap JS -->
     <script
   src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -405,7 +415,11 @@
 
 <!-- Custom JS -->
 <script src="js/homepage.js"></script>
+<!-- Get user location -->
+<script src="js/geolocation.js"></script> 
+<!-- Map -->
 <script src="js/map.js"></script>
+
 
 <script>
     $(function(){
@@ -428,7 +442,7 @@
             setSearchWrapperHeight();
         });
 
-        
+    
     });
     
 </script>
