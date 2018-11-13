@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Buy A Lenovo</title>
+    <link rel="shortcut icon" type="image/x-icon" media="all" href="favicon.ico" />
+
+    <!-- Get user location -->
+    <script src="js/geolocation.js"></script>
 
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -406,9 +410,7 @@
              var contentHeight = $( window ).height() - $( 'header' ).height() - $( '.bottom-tabs' ).height();
         
             if($( '#carouselExampleIndicators:visible' ).length > 0){
-                console.log("coming - carousel YES");
-                contentHeight =  contentHeight - $( '#carouselExampleIndicators' ).height();
-                console.log(contentHeight);
+               contentHeight =  contentHeight - $( '#carouselExampleIndicators' ).height();
             } 
             
             $('#search_result_wrapper').height(contentHeight);
