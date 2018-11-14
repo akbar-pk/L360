@@ -38,7 +38,8 @@
                     
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <!-- <span class="navbar-toggler-icon"></span> -->
+                        <i class="fas fa-bars"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
@@ -53,7 +54,7 @@
                 <div id="search_main" class="search-main">
                     <div class="input-group">
                         <div class="input-group-prepend" id="geolocation_btn">
-                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-crosshairs"></i></span>
+                            <span class="input-group-text" id="basic-addon1"><button class="reset" id="geolocate_btn"><i class="fas fa-crosshairs"></i></button></span>
                         </div>
                         <input id="locator_search_field" type="text" class="form-control" placeholder="SEARCH BY AREA OR PINCODE OR CITY" aria-label="Username" aria-describedby="basic-addon1">
                         <span class="input-group-btn clear-field">
@@ -399,7 +400,7 @@
     <div class="modal fade bd-example-modal-sm" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="locationInfoModal">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
-            <span class="txt d-inline"><i class="fas fa-map-marker-alt d-inline"></i>  &nbsp; Enable location to search near by</span>
+            <span class="txt d-inline"><i class="fas fa-map-marker-alt d-inline"></i>  &nbsp; <strong id="location_txt">Enable location to search near by</strong></span>
             <button type="button" class="close" aria-label="Close" id="closeLocationInfoModal">
                 <span aria-hidden="true">&times;</span>
             </button>
